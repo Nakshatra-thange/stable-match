@@ -16,8 +16,8 @@ interface CandidateProfile {
   name: string;
   yearsExperience: number;
   primaryStack: (typeof STACKS)[number];
-  desiredStageMin: number; // won't rank companies earlier than this stage
-  compPriority: number; // 0-1, how much comp matters vs stage/stack fit
+  desiredStageMin: number;
+  compPriority: number; 
 }
 
 interface CompanyProfile {
@@ -26,8 +26,8 @@ interface CompanyProfile {
   stage: (typeof STAGES)[number];
   stack: (typeof STACKS)[number];
   capacity: number;
-  compBand: number; // 1-5 relative comp competitiveness
-  seniorityBar: number; // minimum years experience company wants
+  compBand: number; 
+  seniorityBar: number; 
 }
 
 const FIRST_NAMES = ['Amara', 'Diego', 'Priya', 'Tomas', 'Wei', 'Fatima', 'Leo', 'Nina', 'Kwame', 'Elif', 'Sana', 'Marcus'];
@@ -63,7 +63,7 @@ function seededCompanyProfiles(count: number): CompanyProfile[] {
   });
 }
 
-/** Candidate's affinity score for a company: higher = more preferred */
+
 function candidateScoreForCompany(cand: CandidateProfile, co: CompanyProfile): number {
   let score = 0;
   if (co.stack === cand.primaryStack) score += 3;
@@ -73,7 +73,7 @@ function candidateScoreForCompany(cand: CandidateProfile, co: CompanyProfile): n
   return score;
 }
 
-/** Company's affinity score for a candidate: higher = more preferred */
+
 function companyScoreForCandidate(co: CompanyProfile, cand: CandidateProfile): number {
   let score = 0;
   if (cand.primaryStack === co.stack) score += 3;

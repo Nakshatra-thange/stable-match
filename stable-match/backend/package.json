@@ -3,8 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  
-  
     "scripts": {
       "demo": "ts-node src/demo.ts",
       "dev": "nodemon --watch src --ext ts --exec ts-node src/server.ts",
