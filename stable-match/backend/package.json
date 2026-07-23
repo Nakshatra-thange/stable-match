@@ -4,10 +4,14 @@
   "description": "",
   "main": "index.js",
   
+  
     "scripts": {
       "demo": "ts-node src/demo.ts",
-      "build": "tsc"
+      "dev": "nodemon --watch src --ext ts --exec ts-node src/server.ts",
+      "build": "tsc",
+      "start": "node dist/server.js"
     }
+  
   
   ,
   "keywords": [],
