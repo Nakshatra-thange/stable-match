@@ -4,6 +4,14 @@ export interface Candidate {
     preferences: string[];
   }
   
+  export interface RejectionEvent {
+    round: number;
+    candidateId: string;
+    companyId: string;
+    reason: 'rejected_worse_than_current_cohort' | 'bumped_by_stronger_candidate';
+    bumpedByCandidateId?: string;
+  }
+
   export interface Company {
     id: string;
     name: string;
